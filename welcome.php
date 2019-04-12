@@ -12,7 +12,7 @@ if(isset($_COOKIE[$cookie_name])) {
       $userID = ($user[0]['ID']);
     try {
       $news = findAllNews($database);
-      
+
       $formError['title']['isValid'] = true;
       $formError['data']['isValid'] = true;
       $formError['ID']['isValid'] = true;
