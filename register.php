@@ -8,18 +8,18 @@ require 'formValidations/formRegisterValidate.php';
 <!doctype html>
 <lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
 </head>
 <body>
 
-<div class="registerContainer">
+  <div class="registerContainer">
     <form id="contact" action="" method="post">
       <h3>Register</h3>
 
@@ -68,13 +68,13 @@ require 'formValidations/formRegisterValidate.php';
         <p id="emailCheck"></p>
       </fieldset>
 
-        <!-- pass-->
+      <!-- pass-->
 
-        <fieldset>
-            <input placeholder="enter password" id="userPasword" type="password" name="password" tabindex="2" required>
-            <input placeholder="confirm password" id="userConfirmPasword" type="password" tabindex="2" required>
-            <p id="passwordCheck"></p>
-        </fieldset>
+      <fieldset>
+        <input placeholder="enter password" id="userPasword" type="password" name="password" tabindex="2" required>
+        <input placeholder="confirm password" id="userConfirmPasword" type="password" tabindex="2" required>
+        <p id="passwordCheck"></p>
+      </fieldset>
 
       <!-- Submit -->
 

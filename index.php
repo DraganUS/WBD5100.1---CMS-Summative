@@ -1,13 +1,19 @@
 <?php
 
+session_start();
+
+if (array_key_exists('userID', $_SESSION)) {
+  header('Location: /welcome.php');
+}
+
 require 'dbConect.php';
 require 'functions.php';
 require 'formValidations/logInValidate.php';
 
 try {
-    $news = findAllNews($database);
+  $news = findAllNews($database);
 } catch (Exception $exception) {
-    $news = [];
+  $news = [];
 }
 ?>
 <!doctype html>
@@ -26,66 +32,66 @@ try {
   <header class="header">
     <div class="container">
       <nav>
-          <ul>
-            <li>
-              <a href="register.php" target="_blank">Register</a>
-            </li>
-            <li >
-              <a onclick="openLogIn()" class="nav-link active" href="#">Log In</a>
-            </li>
-          </ul>
+        <ul>
+          <li>
+            <a href="register.php" target="_blank">Register</a>
+          </li>
+          <li >
+            <a onclick="openLogIn()" class="nav-link active" href="#">Log In</a>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
 
-<div id="modal" ">
-  <form class="" action="" method="post">
-    <i onclick="closeLogIn()" class="fas fa-times"></i>
-    <ul>
-      <li class="<?=($formError['email']['isValid']) ? '' : 'errors';?>">
-        <input type="email" placeholder="email" name="email" >
-        <?php if (!$formError['email']['isValid']) : ?>
-          <ul>
-            <?php foreach ($formError['email']['errors'] as $error) :?>
-              <li><?=$error?></li>
-            <?php endforeach; ?>
-          </ul>
-        <?php endif; ?>
-      </li>
-      <li class="<?=($formError['pass']['isValid']) ? '' : 'errors';?>" >
-        <input type="password" placeholder="pass" name="pass" >
-        <?php if (!$formError['pass']['isValid']) : ?>
-          <ul>
-            <?php foreach ($formError['pass']['errors'] as $error) :?>
-              <li><?=$error?></li>
-            <?php endforeach; ?>
-          </ul>
-        <?php endif; ?>
-      </li>
-    </ul>
+  <div id="modal" ">
+    <form class="" action="" method="post">
+      <i onclick="closeLogIn()" class="fas fa-times"></i>
+      <ul>
+        <li class="<?=($formError['email']['isValid']) ? '' : 'errors';?>">
+          <input type="email" placeholder="email" name="email" >
+          <?php if (!$formError['email']['isValid']) : ?>
+            <ul>
+              <?php foreach ($formError['email']['errors'] as $error) :?>
+                <li><?=$error?></li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+        </li>
+        <li class="<?=($formError['pass']['isValid']) ? '' : 'errors';?>" >
+          <input type="password" placeholder="pass" name="pass" >
+          <?php if (!$formError['pass']['isValid']) : ?>
+            <ul>
+              <?php foreach ($formError['pass']['errors'] as $error) :?>
+                <li><?=$error?></li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+        </li>
+      </ul>
       <button class="btnSign">LOG IN</button>
-  </form>
-</div>
-<!---->
-<h1>These are the latest news</h1>
-<section>
-  <?php foreach ($news as $new) : ?>
-    <div class="news">
+    </form>
+  </div>
+  <!---->
+  <h1>These are the latest news</h1>
+  <section>
+    <?php foreach ($news as $new) : ?>
+      <div class="news">
         <i class="fas fa-pen-square" onclick="openLogIn()" ></i>
-      <div id="title"><?= $new['title']?></div>
-      <div id="data"><?= $new['data'] ?></div>
-      <div id="date">created: <?= $new['date'] ?></div>
-      <div id="first_name"><br><?= $new['first_name'] .' ' .$new['last_name'] ?></div>
-    </div>
+        <div id="title"><?= $new['title']?></div>
+        <div id="data"><?= $new['data'] ?></div>
+        <div id="date">created: <?= $new['date'] ?></div>
+        <div id="first_name"><br><?= $new['first_name'] .' ' .$new['last_name'] ?></div>
+      </div>
 
-  <?php endforeach; ?>
-</section>
-<footer>
+    <?php endforeach; ?>
+  </section>
+  <footer>
 
-</footer>
+  </footer>
 
 
 
-<script src="script.js" charset="utf-8"></script>
+  <script src="script.js" charset="utf-8"></script>
 </body>
 </html>

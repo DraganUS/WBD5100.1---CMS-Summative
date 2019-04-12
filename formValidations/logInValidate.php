@@ -75,9 +75,11 @@ if (!empty($_POST)) {
         if ($userPass && $userEmail && ($userIdPass === $userIdEmail)){
             echo 'pronadjeno';
             $cookie_name = "user";
-            $cookie_value = $userIdPass ;
+            $cookie_value = $userIdPass;
+            session_start();
+            $_SESSION['userID'] = $userIdPass;
             header('Location: welcome.php');
-            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
         } else {
             $passError = "Enter valid password and ussername";
             $formError['pass']['errors'][]=$passError;

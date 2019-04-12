@@ -90,9 +90,9 @@ if (!empty($_POST)) {
             $sex = $_POST['sex'];
             $sex = filter_var($sex, FILTER_SANITIZE_ENCODED);
             if (!($sex ==='male' || $sex ==='female')){
-                $formError['sexError']['isValid'] = true;
-            }else {
                 $formError['sexError']['isValid'] = false;
+            }else {
+                $formError['sexError']['isValid'] = true;
             }
         }
 
