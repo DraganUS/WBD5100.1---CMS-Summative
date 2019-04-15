@@ -90,6 +90,21 @@ function insertNews(mysqli$database, $ID, $titleCreate, $dataCreate)
   $statement->close();
   return true;
 }
+function deleteNews(mysqli $database, $ID_news){
+
+
+    $statement = $database->prepare("DELETE FROM `news` WHERE `ID_news` IN (?)");
+
+  $statement->bind_param('i',  $ID_news);
+  $statement->execute();
+
+  if ($statement->affected_rows === 0) {
+    $statement->close();
+    throw new Exception('Nothing was changed!' . $database->error);
+  }
+  $statement->close();
+  return true;
+}
 
 
 

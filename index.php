@@ -34,7 +34,7 @@ try {
       <nav>
         <ul>
           <li>
-            <a href="register.php" target="_blank">Register</a>
+            <a href="register.php" target="_blank">Create acount</a>
           </li>
           <li >
             <a onclick="openLogIn()" class="nav-link active" href="#">Log In</a>
@@ -44,34 +44,34 @@ try {
     </div>
   </header>
 
-  <div id="modal" ">
-    <form class="" action="" method="post">
-      <i onclick="closeLogIn()" class="fas fa-times"></i>
-      <ul>
-        <li class="<?=($formError['email']['isValid']) ? '' : 'errors';?>">
-          <input type="email" placeholder="email" name="email" >
-          <?php if (!$formError['email']['isValid']) : ?>
-            <ul>
-              <?php foreach ($formError['email']['errors'] as $error) :?>
-                <li><?=$error?></li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
-        </li>
-        <li class="<?=($formError['pass']['isValid']) ? '' : 'errors';?>" >
-          <input type="password" placeholder="pass" name="pass" >
-          <?php if (!$formError['pass']['isValid']) : ?>
-            <ul>
-              <?php foreach ($formError['pass']['errors'] as $error) :?>
-                <li><?=$error?></li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
-        </li>
-      </ul>
-      <button class="btnSign">LOG IN</button>
-    </form>
-  </div>
+      <div id="modal" ">
+        <form class="" action="" method="post">
+          <i onclick="closeLogIn()" class="fas fa-times"></i>
+          <ul>
+            <li class="<?=($formError['email']['isValid']) ? '' : 'errors';?>">
+              <input type="email" placeholder="email" name="email" >
+              <?php if (!$formError['email']['isValid']) : ?>
+                <ul>
+                  <?php foreach ($formError['email']['errors'] as $error) :?>
+                    <li><?=$error?></li>
+                  <?php endforeach; ?>
+                </ul>
+              <?php endif; ?>
+            </li>
+            <li class="<?=($formError['pass']['isValid']) ? '' : 'errors';?>" >
+              <input type="password" placeholder="pass" name="pass" >
+              <?php if (!$formError['pass']['isValid']) : ?>
+                <ul>
+                  <?php foreach ($formError['pass']['errors'] as $error) :?>
+                    <li><?=$error?></li>
+                  <?php endforeach; ?>
+                </ul>
+              <?php endif; ?>
+            </li>
+          </ul>
+          <button class="btnSign">LOG IN</button>
+        </form>
+      </div>
   <!---->
   <h1>These are the latest news</h1>
   <section>

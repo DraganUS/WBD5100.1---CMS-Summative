@@ -9,7 +9,6 @@ try {
 $formError['email']['isValid'] = true;
 $formError['pass']['isValid'] = true;
 
-
 if (!empty($_POST)) {
 
     if (isset($_POST)) {

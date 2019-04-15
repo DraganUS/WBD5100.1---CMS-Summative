@@ -155,7 +155,7 @@ try {
     <?php foreach ($news as $new) : ?>
       <div class="news">
         <form action="" method="post">
-          <i class="fas fa-trash-alt"></i>
+            <a href="deleteNews.php?ID_news=<?=$new['ID_news'] ?>"> <i class="fas fa-trash-alt"></i></a>
           <input type="text" style="display: none" id="ID" name='ID' value="<?= $new['ID']?>">
           <input type="text" style="display: none" id="ID_news" name='ID_news' value="<?= $new['ID_news']?>">
           <input type="text" id="title" name='title' value="<?= $new['title']?>">
